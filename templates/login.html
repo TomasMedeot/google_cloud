@@ -1,21 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
+{% include "nav.html" %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login-register.css') }}">
 <body>
-    <h2>Login</h2>
-    <form method="POST" action="/login">
-        <label for="usuario">Usuario:</label><br>
-        <input type="text" id="usuario" name="usuario"><br>
-        <label for="contraseña">Contraseña:</label><br>
-        <input type="password" id="contraseña" name="contraseña"><br><br>
-        <input type="submit" value="Iniciar sesión">
-    </form>
-    {% if mensaje %}
-        <p>{{ mensaje }}</p>
-    {% endif %}
+    <div class="l-r-body">
+        <div class="l-r-container">
+            <h2 class="l-r-title">Iniciar sesion</h2>
+            <form method="POST" action="/login" class="l-r-form">
+                <label for="usuario">Email:</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="contraseña">Contraseña:</label><br>
+                <input type="password" id="contraseña" name="contraseña"><br><br>
+                <input class="l-r-buttom" type="submit" value="Iniciar sesión">
+            </form>
+            {% if mensaje %}
+                <p>{{ mensaje }}</p>
+            {% endif %}
+
+            <p class="l-r-p">¿No tienes una cuenta? <a href="/register">Registrate</a></p>
+        </div>
+    </div>
 </body>
 </html>

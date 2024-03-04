@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    font-family: 'Bitter', serif;
+}
+.navbar {
+    overflow: hidden;
+    display: flex;
+    background-color: #03045E;
+    position: fixed;
+    top: 0;
+    height: 70px;
+    width: 100%;
+    align-items: center;
+    justify-content: end;
+}
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}

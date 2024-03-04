@@ -1,22 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
-</head>
+{% include "nav.html" %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='login-register.css') }}">
 <body>
-    <h2>Registro</h2>
-    <form method="POST" action="/registro">
-        <label for="usuario">Usuario:</label><br>
-        <input type="text" id="usuario" name="usuario"><br>
-        <label for="contraseña">Contraseña:</label><br>
-        <input type="password" id="contraseña" name="contraseña"><br><br>
-        <input type="submit" value="Registrarse">
-    </form>
-    {% if mensaje %}
-        <p>{{ mensaje }}</p>
-    {% endif %}
-    <p>¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a></p>
+    <div class="l-r-body">
+        <div class="l-r-container">
+            <h2 class="l-r-title">Registrarse</h2>
+            <form method="POST" action="/register" class="l-r-form">
+                <label for="usuario">Email:</label>
+                <input type="email" id="email" name="email">
+                <label for="contraseña">Contraseña:</label>
+                <input type="password" id="contraseña" name="contraseña">
+                <label for="contraseña">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+                <label for="contraseña">Telefono:</label>
+                <input type="number" id="telefono" name="telefono">
+                <input class="l-r-buttom" type="submit" value="Crear cuenta">
+            </form>
+            {% if mensaje %}
+                <p>{{ mensaje }}</p>
+            {% endif %}
+            <p class="l-r-p">¿Ya tienes una cuenta? <a href="/login">Inicia sesión</a></p>
+        </div>
+    </div>
 </body>
 </html>
